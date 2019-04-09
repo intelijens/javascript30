@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪</title>
+</head>
+<body>
+<script>
+  // Get your shorts on - this is an array workout!
+  // ## Array Cardio Day 1
+
+  // Some data we can work with
+
+const inventors = [
+  { first: 'Albert', last: 'Einstein', year: 1211, passed: 1955 },
+  { first: 'Isaac', last: 'Newton', year: 1311, passed: 1727 },
+  { first: 'Galileo', last: 'Galilei', year: 1411, passed: 1642 },
+  { first: 'Marie', last: 'Curie', year: 1511, passed: 1934 },
+  { first: 'Johannes', last: 'Kepler', year: 1521, passed: 1630 },
+  { first: 'Nicolaus', last: 'Copernicus', year: 1531, passed: 1543 },
+  { first: 'Max', last: 'Planck', year: 1541, passed: 1947 },
+  { first: 'Katherine', last: 'Blodgett', year: 1611, passed: 1979 },
+  { first: 'Ada', last: 'Lovelace', year: 1715, passed: 1852 },
+  { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
+  { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
+  { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
+];
+
+const names = [
+  'Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'
+];
+
+const people = [
+  { name: 'Wes', year: 1988 },
+  { name: 'Kait', year: 1986 },
+  { name: 'Irv', year: 1910 },
+  { name: 'Lux', year: 2015 }
+];
+
+const comments = [
+  { text: 'Love this!', id: 1 },
+  { text: 'Super good', id: 2 },
+  { text: 'You are the best', id: 3 },
+  { text: 'Ramen is my fav food ever', id: 4 },
+  { text: 'Nice Nice Nice!', id: 5 },
+  { text: 'sdf', id: 1 },
+  { text: 'dfg', id: 2 },
+  { text: 'fgh', id: 3 },
+  { text: 'ghj', id: 4 },
+  { text: 'hjk', id: 5 }
+];
+
+const ducer = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+const love = ['one', 'two', 'three', 'four', 'five', 'one', 'three', 'one', 'three', 'four', 'car', 'one', 'four', 'four' ];
+
+</script>
+
+
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <h3>.FILTER()</h3>
+  <ul class="filtered_suggestions"></ul>
+
+  <h3>.MAP()</h3>
+  <ul class="mapped_suggestions"></ul>
+
+  <h3>.SORT()</h3>
+  <ul class="sorted_suggestions"></ul>
+
+  <h3>.REDUCE()</h3>
+  <ul class="reduced_suggestions"></ul>
+
+  <h3>.REDUCE() 2</h3>
+  <ul class="reduced_suggestions2"></ul>
+  <h3>.REDUCE() 3</h3>
+  <ul class="reduced_suggestions3"></ul>
+  <h3>.REDUCE() 4</h3>
+  <ul class="reduced_suggestions4"></ul>
+  <h3>.REDUCE() 5</h3>
+  <ul class="reduced_suggestions5"></ul>
+  <h3>.REDUCE() 6</h3>
+  <ul class="reduced_suggestions6"></ul>
+  <h3>.REDUCE() 7</h3>
+  <ul class="reduced_suggestions7"></ul>
+  <h3>.REDUCE() 8</h3>
+  <ul class="reduced_suggestions8"></ul>
+
+<script>
+
+// Array.prototype.filter()
+// 1. Filter the list of inventors for those who were born in the 1500's
+    const f_s = document.querySelector('.filtered_suggestions');
+
+    const filtered = inventors.filter(thiscouldbeanything =>
+      thiscouldbeanything.year >= 1500 && thiscouldbeanything.year < 1600
+      ? true : console.log('nah'));
+
+    console.log('Filtered List');
+    console.table(filtered);
+
+    const filteredOutput = filtered.map(anynameforvariable => f_s.innerHTML += `<li>${anynameforvariable.first} ${anynameforvariable.last} born in ${anynameforvariable.year} </li>`);
+
+    //call it
+    filteredOutput;
+
+
+// Array.prototype.map()
+// 2. Give us an array of the inventors' first and last names
+    const m_s = document.querySelector('.mapped_suggestions');
+
+    console.log('Names List');
+    console.table(names);
+
+    const mapped = names.map(huhuhuhuhhh => {
+      const[last, first] = huhuhuhuhhh.split(', ');
+      m_s.innerHTML += `<li>${first} ${last} </li>`;
+    });
+
+    mapped;
+
+
+// Array.prototype.sort()
+// 3. Sort the inventors by birthdate, oldest to youngest
+    const s_s = document.querySelector('.sorted_suggestions');
+    const sorted = inventors.sort((watwatwat, wutwutwut) => watwatwat.year > wutwutwut.year ? -1 : 1);
+    console.log('Inventors List Unsorted');
+    console.table(inventors);
+
+    const map_sorted = sorted.map(wuhwuhwuh => s_s.innerHTML += `<li>${wuhwuhwuh.first} ${wuhwuhwuh.last} born in ${wuhwuhwuh.year} </li>`);
+
+
+// Array.prototype.reduce()
+// 4. How many years did all the inventors live?
+
+    const r_s = document.querySelector('.reduced_suggestions');
+
+    // const reduced = love.reduce((whateveryouwanttocallurreducerobject, item) => {
+    //   (!whateveryouwanttocallurreducerobject[item]) ? (whateveryouwanttocallurreducerobject[item] = 0) : false;
+    //   whateveryouwanttocallurreducerobject[item]++;
+    //   return whateveryouwanttocallurreducerobject;
+    // }, {}); //{empy object} is the default if obj is empty
+    //
+    // console.log(reduced);
+
+    var totalAmount = comments.reduce(function(sum, order){
+      console.log(sum);
+      return sum + order.id;
+    }, 0)
+
+    console.log(totalAmount);
+
+    const reduced = comments.reduce((obj, item) => obj + item.id, 0)
+    console.log(reduced);
+
+    r_s.innerHTML = reduced;
+
+
+// Array.prototype.reduce()
+
+// ** break off ** //
+// ** break off ** //
+
+    //break off ---reduce research
+    //https://www.youtube.com/watch?v=lcfnrg7PZyk
+
+    const fruit = {
+      banana: 'good',
+      apple: 'better',
+      pear: 'okay',
+      peach: 'good',
+      watermelon: 'good',
+      strawberry: 'good',
+      orange: 'better'
+    }
+    console.log('fruit as 1 object');
+    console.log(fruit);
+
+    const r_s2 = document.querySelector('.reduced_suggestions2');
+    r_s2.innerHTML = "FRUIT as an object <br />";
+    r_s2.innerHTML += JSON.stringify(fruit);
+
+    //console.log(Object.entries(fruit));
+
+    //turns an object into an array of arrays
+    console.log('fruit as array of arrays');
+    const arrayOfFruit = Object.entries(fruit);
+    console.log(arrayOfFruit);
+
+    const r_s3 = document.querySelector('.reduced_suggestions3');
+    r_s3.innerHTML = "FRUIT as an array of arrays <br />";
+    r_s3.innerHTML += JSON.stringify(arrayOfFruit);
+
+
+    ///nice to use this with reduce and objects
+    const goodStuff = arrayOfFruit.reduce((goodFruit, [fruitName, quality]) => {
+      if(quality === 'good'){
+        goodFruit[fruitName]= quality
+      }
+        return goodFruit
+    },{})
+    console.log('converted FRUIT array reduced in items as object');
+    console.log(goodStuff);
+
+    const r_s4 = document.querySelector('.reduced_suggestions4');
+    r_s4.innerHTML = "converted FRUIT array reduced in items as object<br />";
+    r_s4.innerHTML += JSON.stringify(goodStuff);
+
+
+
+    const goodStuff_A = arrayOfFruit.reduce((goodFruit, [fruitName, quality]) => {
+      if(quality === 'good'){
+        goodFruit.push([fruitName, quality]);
+      }
+        return goodFruit
+    },[]);
+
+
+    console.log('object reduced in items -> arrays ');
+    console.log(goodStuff_A);
+
+    const r_s5 = document.querySelector('.reduced_suggestions5');
+    r_s5.innerHTML = "converted FRUIT array reduced in items as arrays <br />";
+    document.addEventListener("DOMContentLoaded", function(event) {
+    r_s5.innerHTML += JSON.stringify(goodStuff_A);
+    })
+
+
+    // const goodStuff_O = arrayOfFruit.reduce((goodFruit, [fruitName, quality]) => {
+    //   if(quality === 'good'){
+    //     goodFruit.push(fruitName);
+    //   }
+    //     return goodFruit;
+    // },{})
+    // console.log('object reduced in items -> only the names as an array');
+    // console.log(goodStuff_O);
+    //
+    // const r_s6 = document.querySelector('.reduced_suggestions6');
+    // r_s6.innerHTML = "FRUIT object reduced in items -> only the names as an array <br />";
+    // r_s6.innerHTML += JSON.stringify(goodStuff_O);
+
+
+
+
+    const goodStuff_G = arrayOfFruit.reduce((goodFruit, [fruitName, quality]) => {
+      if(quality === 'good'){
+        goodFruit.push(fruitName);
+      }
+        return goodFruit;
+    },[])
+    console.log('converted FRUIT array reduced in items -> only the names as an array');
+    console.log(goodStuff_G);
+
+    const r_s6 = document.querySelector('.reduced_suggestions6');
+    r_s6.innerHTML = "converted FRUIT array reduced in items -> only the names as an array <br />";
+    r_s6.innerHTML += JSON.stringify(goodStuff_G);
+
+
+
+
+    var backto = goodStuff_G.reduce(function(acc, val, i) {
+      acc[i] = val;
+      return acc;
+    }, {});
+
+    console.log(backto);
+
+
+    const r_s7 = document.querySelector('.reduced_suggestions7');
+    r_s7.innerHTML = "converted FRUIT array reduced and converted back to object <br />";
+
+    r_s7.innerHTML += JSON.stringify(backto);
+
+
+
+
+
+    ///nice to use this with reduce and objects
+    var array_index = 0;
+    const sample8 = arrayOfFruit.reduce((goodFruit, [fruitName, quality]) => {
+      if(quality === 'good'){
+        goodFruit[array_index] = fruitName;
+        array_index++;
+      }
+        return goodFruit
+    },{})
+    console.log('object reduced in items');
+    console.log(sample8);
+
+    const r_s8 = document.querySelector('.reduced_suggestions8');
+    r_s8.innerHTML = "FRUIT array reduced to object <br />";
+    r_s8.innerHTML += JSON.stringify(sample8);
+
+
+
+
+
+
+
+
+
+
+
+
+
+      const goodStuff_C = arrayOfFruit.reduce((goodFruit, [fruitName, quality]) => {
+        if(quality === 'good'){
+          return goodFruit + 1
+        }
+          return goodFruit;
+      },0)
+      console.log('object reduced in items -> as a count');
+      console.log(goodStuff_C);
+
+
+
+
+
+
+
+
+
+
+
+
+      const keysOfFruit = Object.keys(fruit);
+      console.log('keysOfFruit');
+      console.log(keysOfFruit);
+
+      const valuesOfFruit = Object.values(fruit);
+      console.log('valuesOfFruit');
+      console.log(valuesOfFruit);
+
+
+
+
+      const goodStuff_V = valuesOfFruit.reduce((goodFruit, quality) => {
+        if(quality === 'good'){
+          return goodFruit + 1
+        }
+          return goodFruit;
+      },0)
+      console.log('values array reduced in items as a count');
+      console.log(goodStuff_V);
+
+      const goodStuff_MF = arrayOfFruit
+        .filter(([fruitName, quality]) => quality === 'good')
+        .map(([fruitName]) => fruitName)
+
+      console.log('reduce sample as filter > map');
+      console.log(goodStuff_MF);
+
+
+      //break off ---reduce additional research
+      //https://www.youtube.com/watch?v=CXxVjQ1VTEo
+
+      const numbers = [2,4,6,8,10,12,14];
+
+      const what = numbers.reduce(function(object, item){
+        object[item] = item * item;
+        return object;
+      }, {});
+      console.log(what);
+
+
+      const huh = numbers.reduce(
+        (acc, val, ind, arr) =>{
+            console.log(
+              'accumulator:', acc,
+              'value:', val,
+              'index:', ind,
+              'array:', arr
+            );
+            return acc + val
+        }, 0
+      );
+
+      console.log(huh);
+
+      const unconventional = [[8,6],[5,4,3],[2]];
+
+      const yea = unconventional.reduce(
+        (a,b) => {
+          return a.concat(b);
+        }, []
+      );
+
+      console.log(yea);
+
+    // 5. Sort the inventors by years lived
+
+    // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+
+    // 7. sort Exercise
+    // Sort the people alphabetically by last name
+
+    // 8. Reduce Exercise
+    // Sum up the instances of each of these
+
+
+
+
+
+
+//ARRAY METHODS
+
+// Array.prototype.filter()
+// Array.prototype.map()
+// Array.prototype.sort()
+// Array.prototype.some()
+// Array.prototype.every()
+// Array.prototype.find()
+// Array.prototype.findIndex()
+
+  </script>
+</body>
+</html>
