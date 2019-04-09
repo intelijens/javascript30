@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Panels 💪</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<style>
+
+</style>
+
+
+  <div class="panels">
+    <div class="panel panel1">
+      <p>Donnie</p>
+      <p class="black">T</p>
+      <p>Brains</p>
+
+
+
+    </div>
+    <div class="panel panel2">
+      <p>Raph</p>
+      <p class="black">M</p>
+      <p>Muscle</p>
+    </div>
+    <div class="panel panel3">
+      <p>Shredder</p>
+      <p class="black">Villian</p>
+      <p><a href="https://lordwilhelm.deviantart.com/art/TMNT-Skottie-Young-Style-454701666" target="_blank" style="clear:both;"><img src="logo-lord_wilhelm.png" /></a></p>
+    </div>
+    <div class="panel panel4">
+      <p>Leo</p>
+      <p class="black">N</p>
+      <p>Leader</p>
+    </div>
+    <div class="panel panel5">
+      <p>Mikey</p>
+      <p class="black">T</p>
+      <p>Party</p>
+    </div>
+  </div><!--end panels-->
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+
+    function toggleOpen(){
+      console.log('jheelo');
+      this.classList.toggle('open');
+    }
+
+    function toggleActive(e){
+      // console.log(e.propertyName);
+        //flex-grow
+        //font-size
+      // if(e.propertyName === 'flex-grow')
+      if(e.propertyName.includes('flex')){
+        this.classList.toggle('active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
+  </script>
+
+
+
+</body>
+</html>
