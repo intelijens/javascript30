@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BUI Type Ahead</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+  html {
+    background:url('../coinbase-silicon-valley-ico.png');
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+  }
+  </style>
+
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="TYPE HERE!">
+    <ul class="suggestions">
+      <li style="justify-content: center;">HBO'S SILICON VALLEY</li>
+      <li style="justify-content: center;">46 EPISODES OVER 5 SEASONS</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'http://api.tvmaze.com/singlesearch/shows?q=silicon-valley&embed=episodes';
+
+
+const shows =[];
+
+//fetch returns a promise
+
+// const promise = fetch(endpoint);
+// console.log(promise);
+
+// fetch(endpoint).then(blob => console.log(blob));
+//need to convert raw blob data into JSON
+fetch(endpoint)
+  // .then(blob => blob.json())
+  // .then(function(response) { return response.json(); })
+  .then(response => response.json())
+  //.then(data => console.log(data._embedded.episodes))
+  .then(data => shows.push(...data._embedded.episodes));
+
+  //how do i get this data into cities[]?
+    //try .then(data =>cities = data)
+    //index.html:35 Uncaught (in promise) TypeError: Assignment to constant variable.at fetch.then.then.data (index.html:35)
+
+  // .then(data =>cities.push(data))
+  //an array of an array,,,it's nested now
+
+  // .then(data => cities.push(...data));
+
+
+function findMatches(wordToMatch, shows){
+  return shows.filter(show => {
+    //here to we need to figure out if the city or state matches what was searched.
+
+    //return place.city.match(/bos/i)
+    //need variable
+    const regex = new RegExp(wordToMatch, 'gi');
+    //gi = global insensitive
+    return show.name.match(regex)
+  });
+}
+
+function numberWithCommas(x){
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+function displayMatches(){
+  console.log(this.value);
+  const matchArray = findMatches(this.value, shows);
+  console.log(matchArray);
+  const html = matchArray.map(show =>{
+    const regex = new RegExp(this.value, 'gi');
+    const showImage = show.image.medium;
+    const showSeason = show.season;
+    const showEpisode = show.number;
+    const showName = show.name.replace(regex, `<span class='hl'>${this.value}</span>`);
+    return `
+      <li class="block">${showName}<br />
+      Season: ${showSeason}  |
+      Episode: ${showEpisode} <br />
+      <img src='${showImage}'>
+      </li>
+      `;
+  }).join('');
+  suggestions.innerHTML = html;
+}
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
+</script>
+  </body>
+</html>
