@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Drum Kit :: JS30 - Day 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+  <div class="keys">
+    <div class="hundid">
+      <div data-key="49" class="key">
+        <kbd>1</kbd>
+        <span class="sound">apache</span>
+      </div>
+    </div>
+  </div>
+  <div class="keys">
+    <div class="hundid">
+      <div data-key="81" class="key">
+        <kbd>Q</kbd>
+        <span class="sound">hee hee</span>
+      </div>
+
+      <div data-key="87" class="key">
+        <kbd>W</kbd>
+        <span class="sound">here we go</span>
+      </div>
+
+      <div data-key="69" class="key">
+        <kbd>E</kbd>
+        <span class="sound">i am wario</span>
+      </div>
+
+      <div data-key="82" class="key">
+        <kbd>R</kbd>
+        <span class="sound">im the best</span>
+      </div>
+
+      <div data-key="84" class="key">
+        <kbd>T</kbd>
+        <span class="sound">lets go</span>
+      </div>
+
+      <div data-key="89" class="key">
+        <kbd>Y</kbd>
+        <span class="sound">mamma mia</span>
+      </div>
+
+      <div data-key="85" class="key">
+        <kbd>U</kbd>
+        <span class="sound">okie dokie</span>
+      </div>
+
+      <div data-key="73" class="key">
+        <kbd>I</kbd>
+        <span class="sound">wee hee</span>
+      </div>
+
+      <div data-key="79" class="key">
+        <kbd>O</kbd>
+        <span class="sound">woo hoo</span>
+      </div>
+
+      <div data-key="80" class="key">
+        <kbd>P</kbd>
+        <span class="sound">yippeee</span>
+      </div>
+    </div>
+  </div> <!--keys-->
+
+  <div class="keys">
+
+    <div class="hundid">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">usa</span>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">japan</span>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">brazil</span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <span class="sound">round</span>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">one</span>
+      </div>
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+        <span class="sound">hadouken</span>
+      </div>
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+        <span class="sound">shoryken</span>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+        <span class="sound">sonicboom</span>
+      </div>
+      <div data-key="76" class="key">
+        <kbd>L</kbd>
+        <span class="sound">tiger</span>
+      </div>
+    </div>
+
+
+  </div><!--keys-->
+
+  <audio data-key="81" src="sounds/mariokart/hee_hee.wav"></audio>
+  <audio data-key="87" src="sounds/mariokart/here_we_go.wav"></audio>
+  <audio data-key="69" src="sounds/mariokart/i_am_wario.wav"></audio>
+  <audio data-key="82" src="sounds/mariokart/im_the_best.wav"></audio>
+  <audio data-key="84" src="sounds/mariokart/lets_go.wav"></audio>
+  <audio data-key="89" src="sounds/mariokart/mamma_mia.wav"></audio>
+  <audio data-key="85" src="sounds/mariokart/okie_dokie.wav"></audio>
+  <audio data-key="73" src="sounds/mariokart/wee_hee.wav"></audio>
+  <audio data-key="79" src="sounds/mariokart/woo_hoo.wav"></audio>
+  <audio data-key="80" src="sounds/mariokart/yippeee.wav"></audio>
+
+  <audio data-key="65" src="sounds/USA_59H.wav"></audio>
+  <audio data-key="83" src="sounds/Japan_57H.wav"></audio>
+  <audio data-key="68" src="sounds/Brazil_58H.wav"></audio>
+  <audio data-key="70" src="sounds/Round_5FH.wav"></audio>
+  <audio data-key="71" src="sounds/One_60H.wav"></audio>
+  <audio data-key="72" src="sounds/Hadouken_74H.wav"></audio>
+  <audio data-key="74" src="sounds/Shoryuken_6AH.wav"></audio>
+  <audio data-key="75" src="sounds/Sonicboom_70H.wav"></audio>
+  <audio data-key="76" src="sounds/Tiger_76H.wav"></audio>
+  <audio data-key="65" src="sounds/USA_59H.wav"></audio>
+  <audio data-key="49" src="sounds/apache.wav"></audio>
+
+</body>
+
+
+
+<!--Javascript 30-->
+
+<script>
+
+/*
+what element are we listening too?
+this time it's the window,
+next time may listen to an input, div, or text area
+
+*/
+
+/*
+the (e) passed into the function is the event.
+event is just and object full or data, describing what hapnned
+*/
+
+
+function playSound(e){
+  console.log(e);
+ //console.log(e); //the event
+
+ const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
+ const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+ //only needed one, if needed many querySelectorAll()
+
+ //console.log(audio); //the audio tag
+ //console.log(key); //the key class
+
+ if(!audio) return; //stop the function from running all together
+ audio.currentTime = 0;
+ audio.play();
+
+ //vanilla js
+ key.classList.add('playing');
+ //jquery would be:
+ //key.addClass('playing');
+
+}
+
+function removeTransition(e){
+  //console.log(e);
+  if(e.propertyName !== 'transform') return;
+  //skip if it's not a transform
+  //console.log(e.propertyName);
+  this.classList.remove('playing');
+}
+
+const keys = document.querySelectorAll('.key');
+
+keys.forEach(key=> key.addEventListener('transitionend', removeTransition))
+
+window.addEventListener('keydown', playSound);
+
+
+
+
+
+
+function clickSound() {
+  //get the data key
+  var attribute = this.getAttribute("data-key");
+  // alert(attribute);
+
+  //get audio file using the data key
+  const audio = document.querySelector(`audio[data-key="${attribute}"]`);
+  //only needed one, if needed many querySelectorAll()
+
+  //console.log(audio); //the audio tag
+
+  if(!audio) return; //stop the function from running all together
+  audio.currentTime = 0;
+  audio.play();
+
+  this.classList.add('playing');
+
+};
+
+//get key divs for click
+var classname = document.getElementsByClassName("key");
+
+Array.from(classname).forEach(function(element) {
+  element.addEventListener('click', clickSound);
+});
+
+
+</script>
+
+
+
+
+</html>
