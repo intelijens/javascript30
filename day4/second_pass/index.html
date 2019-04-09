@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BUI Array Cardio </title>
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <p>M.Bui's note: for some reason I don't see the console.table's output when I get to this page from a hyperlink; it shows ONLY once I refresh the page, after I have already inspected it and opened the console tab.  Maybe someone can advise me on this; I tried to add document.addEventListener("DOMContentLoaded", function(event) {});
+    <br /> -thanks!
+  </p>
+
+  <script>
+    // Get your shorts on - this is an array workout!
+    // ## Array Cardio Day 1
+
+    // Some data we can work with
+
+    //https://mockaroo.com/
+
+    const customers =
+      [{
+        "id": 1,
+        "first": "Raphaela",
+        "last": "Meece",
+        "email": "rmeece0@squidoo.com",
+        "hex": "#fa843d",
+        "address": "2784 Fair Oaks Crossing",
+        "city": "Amarillo",
+        "state": "Texas",
+        "postal": "79116",
+        "year": 2013
+      }, {
+        "id": 2,
+        "first": "Hewie",
+        "last": "Belleny",
+        "email": "hbelleny1@youtube.com",
+        "hex": "#1a0d14",
+        "address": "6857 Beilfuss Center",
+        "city": "Lincoln",
+        "state": "Nebraska",
+        "postal": "68517",
+        "year": 1988
+      }, {
+        "id": 3,
+        "first": "Vinni",
+        "last": "Pawelek",
+        "email": "vpawelek2@sbwire.com",
+        "hex": "#a4b6d4",
+        "address": "7 Jenifer Park",
+        "city": "Memphis",
+        "state": "Tennessee",
+        "postal": "38150",
+        "year": 1989
+      }, {
+        "id": 4,
+        "first": "Annissa",
+        "last": "Leggett",
+        "email": "aleggett3@prnewswire.com",
+        "hex": "#cef887",
+        "address": "3598 Straubel Point",
+        "city": "Philadelphia",
+        "state": "Pennsylvania",
+        "postal": "19184",
+        "year": 1761
+      }, {
+        "id": 5,
+        "first": "Gottfried",
+        "last": "Speachley",
+        "email": "gspeachley4@4shared.com",
+        "hex": "#211a32",
+        "address": "546 Erie Plaza",
+        "city": "Woburn",
+        "state": "Massachusetts",
+        "postal": "01813",
+        "year": 2018
+      }, {
+        "id": 6,
+        "first": "Blondie",
+        "last": "McKew",
+        "email": "bmckew5@usatoday.com",
+        "hex": "#982bea",
+        "address": "461 Straubel Junction",
+        "city": "Harrisburg",
+        "state": "Pennsylvania",
+        "postal": "17105",
+        "year": 1842
+      }, {
+        "id": 7,
+        "first": "Orly",
+        "last": "Pods",
+        "email": "opods6@twitter.com",
+        "hex": "#924907",
+        "address": "9 Merchant Alley",
+        "city": "Youngstown",
+        "state": "Ohio",
+        "postal": "44555",
+        "year": 1911
+      }, {
+        "id": 8,
+        "first": "Carol",
+        "last": "Pittet",
+        "email": "cpittet7@mtv.com",
+        "hex": "#39937f",
+        "address": "1 Harper Court",
+        "city": "Valley Forge",
+        "state": "Pennsylvania",
+        "postal": "19495",
+        "year": 1930
+      }, {
+        "id": 9,
+        "first": "Shayne",
+        "last": "Shearn",
+        "email": "sshearn8@biglobe.ne.jp",
+        "hex": "#8964ea",
+        "address": "42 Porter Parkway",
+        "city": "Glendale",
+        "state": "California",
+        "postal": "91205",
+        "year": 1940
+      }, {
+        "id": 10,
+        "first": "Tom",
+        "last": "McGhee",
+        "email": "tmcghee9@ask.com",
+        "hex": "#8a27ab",
+        "address": "6243 Westport Street",
+        "city": "New York City",
+        "state": "New York",
+        "postal": "10131",
+        "year": 1846
+      }];
+
+      const fighters = [{"name":"Ryu","height":"5\'9\"(175 cm)","birth":"7-21","year":1964,"country":"Japan","style":"Ansatsuken","moves":"Hadoken, Shoryuken, Tatsumaki Senpukyaku"},
+      {"name":"Chun-Li","height":"5\'5\" (165 cm)","birth":"3-1","year":1968,"country":"China","style":"Chinese martial arts","moves":"Hyakuretsukyaku, Kikoken, Spinning Bird Kick"},
+      {"name":"Guile","height":"6\'1\" (186 cm, including hair)","birth":"12-23","year":1960,"country":"United States of America","style":"Martial arts and professional wrestling","moves":"Sonic Boom, Flash Kick"},
+      {"name":"M. Bison","height":"5\'11\" (182 cm)","birth":"4-17","year":1900,"country":"Thailand","style":"Psycho Power","moves":"Hell Attack, Psycho Crusher, Double Knee Press"},
+      {"name":"Blanka","height":"6\'4\" (192 cm)","birth":"2-12","year":1966,"country":"Brazil","style":"Feral movement, electric attacks","moves":"Electric Thunder, Rolling Attack, Vertical Roll"}]
+
+
+      const people = ["Beck, Glenn", "Becker, Carl", "Beckett, Samuel", "Beddoes, Mick", "Beecher, Henry", "Beethoven, Ludwig", "Begin, Menachem", "Belloc, Hilaire", "Bellow, Saul", "Benchley, Robert", "Benenson, Peter", "Ben-Gurion, David", "Benjamin, Walter", "Benn, Tony", "Bennington, Chester", "Benson, Leana", "Bent, Silas", "Bentsen, Lloyd", "Berger, Ric" , "Bergman, Ingmar", "Berio, Luciano", "Berle, Milton", "Berlin, Irving", "Berne, Eric", "Bernhard, Sandra", "Berra, Yogi", "Berry, Halle", "Berry, Wendell", "Bethea, Erin", "Bevan, Aneurin", "Bevel, Ken", "Biden, Joseph", "Bierce, Ambrose", "Biko, Steve", "Billings, Josh", "Biondo, Frank", "Birrell, Augustine", "Black, Elk", "Blair, Robert", "Blair, Tony", "Blake, William"];
+
+
+
+    // array methods
+    // get really good at filter map sort Reduce
+    // get better a javascript
+    //
+
+
+
+
+    // Array.prototype.filter()
+        // how filter works is that you pass it a function, and that function is going to loop over every single item in our array, and then give us the inventor
+
+    // 1. Filter the list of inventors for those who were born in the 1500's
+
+      //classic function
+      const nineteen = customers.filter(function(customer){
+        if(customer.year >= 1800 && customer.year < 1900){
+          return true; //boolean //keep the item
+        } //else{
+          //return false; //don't keep the item
+      });
+      console.log('nineteen');
+      console.log(nineteen);
+
+      //arrow function with ternary
+      const allmight = customers.filter((customer) => ((customer.year >= 1700) && (customer.year < 2000)) ? true : false);
+      console.log('allmight');
+      console.table(allmight);
+
+
+      //consolidated code:
+      const street = fighters.filter(f => f.year >= 1960 && f.year < 1970);
+      console.log('street fighter');
+      console.table(street);
+
+      //filter returns the item /*true*/ or does not show /*false*/
+
+
+    // Array.prototype.map()
+        //what does map do?
+        // it takes in array, it does something with that array, returns a new array of same length
+        //  it's like a factory machine
+        // takes in raw material and stamp it and pick out that item on the other end
+        // map will always return the same amount of items you give it
+        //
+
+
+    // 2. Give us an array of the inventors' first and last names
+
+    //`back ticks` - template strings
+    const nameandstyle = fighters.map(fighter => `${fighter.name}'s style is ${fighter.style}`);
+    // const nameandstyle = fighters.map((fighter)=> (fighter.year >= 1960) && (fighter.year < 1970) ? true : false);
+    console.log('nameandstyle');
+    console.table(nameandstyle);
+
+    const customerbase = customers.map(c => `${c.first} ${c.last} has an email of ${c.email} and has a favorite color of ${c.hex}.  Lives at ${c.address}, ${c.city}, ${c.state} ${c.postal}.  Born in ${c.year}!`);
+
+    console.log(customerbase);
+
+    // Array.prototype.sort()
+
+    // the way that sort works
+    // you get 2 items, asked to sort just those 2 items.
+    // which will bubble these items up or down the array
+
+
+    // 3. Sort the inventors by birthdate, oldest to youngest
+    const ordered = fighters.sort((fighter_a, fighter_b) => (fighter_a.year > fighter_b.year ? 1 : -1 ));
+
+    console.log('ordered by age oldest first');
+    console.table(ordered);
+
+    const date = customers.sort((a,b) => (a.year > b.year ? -1 : 1));
+    console.log('ordered by age youngest first');
+    console.table(date);
+
+    const alpha = customers.sort((a,b) => a.last > b.last ? 1 : -1);
+    console.log('ordered by last name');
+    console.table(alpha);
+
+    // Array.prototype.reduce
+
+    // unlike sort and map take items  will sort and do something else or filter down
+
+    // so what a reduce will do
+    // is allow you to build something on every single one
+    //
+    // var totalYears2 = 0;
+    //
+    // for (var i=0; i<inventors.length; i++){
+    //   console.log(inventors[i].first);
+    //   console.log(inventors[i].passed - inventors[i].year);
+    //   totalYears2 += (inventors[i].passed - inventors[i].year);
+    //
+    //   console.log(totalYears2);
+    // }
+
+    // a much cleaner way to do that without this for loop [i]
+    // it give you the running total, or what you've returned from this function last time
+    // and from that we are going to return total(last time around), and then we are going goto return the years that that inventor lived
+
+
+
+    // 4. How many years did all the inventors live?
+      const totalYears = fighters.reduce((a,b) => {
+        const age = 2018 - b.year;
+        console.log(b.name);
+        console.log(age);
+        return a + age;
+      },0); //0 is the default if a*aka total is empty
+      console.log('total ages:');
+      console.log(totalYears);
+
+
+    // 5. Sort the inventors by years age
+
+    const ages = fighters.sort((a,b) => (2018 - a.year) > (2018 - b.year) ? 1 : -1);
+    console.table(ages);
+
+    // 6. create a list of Anime's that contain 'the' anywhere in the name
+    // http://www.crunchyroll.com/
+    //
+    // .welcome-simulcasts
+
+    // const mugs = document.querySelector('.welcome-simulcasts');
+    // const imgs = Array.from(mugs.querySelectorAll('a'));
+    // // const the = img.map(img => img.)
+    // const the = imgs
+    //             .map(link => link.textContent)
+    //             .filter(streetName => streetName.includes('the '));
+
+
+
+    // 7. sort Exercise
+    // Sort the people alphabetically by last name
+
+    // 8. Reduce Exercise
+    // Sum up the instances of each of these
+    const vehicles = ['vespa', 'vespa', 'tacoma', 'tacoma', 'ktm duke', 'hitchhike', 'vespa', 'bus', 'ktm duke', 'hitchhike', 'vespa', 'bus', 'vespa', 'tacoma' ];
+
+    const transportation =
+    vehicles.reduce((obj, item) => {
+      (!obj[item]) ? (obj[item] = 0) : false;
+      obj[item]++;
+      return obj;
+    }, {}); //{empy object} is the default if obj is empty
+
+    console.log(transportation);
+
+  </script>
+</body>
+</html>
