@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪</title>
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+    // Get your shorts on - this is an array workout!
+    // ## Array Cardio Day 1
+
+    // Some data we can work with
+
+const peoples = [
+  {"id":1,"first_name":"Ellis","last_name":"Heam","product":"Shoes","price":887.41,"date":"2016-01-15 14:09:32"},
+  {"id":2,"first_name":"Denyse","last_name":"Winscum","product":"Baby","price":493.62,"date":"1985-08-26 17:53:15"},
+  {"id":3,"first_name":"Sanders","last_name":"Yter","product":"Electronics","price":909.47,"date":"2014-09-14 04:34:10"},
+  {"id":4,"first_name":"Tomi","last_name":"Genders","product":"Beauty","price":667.77,"date":"1985-05-21 03:47:03"},
+  {"id":5,"first_name":"Rey","last_name":"Awcock","product":"Tools","price":90.24,"date":"1992-12-20 16:54:18"},
+  {"id":6,"first_name":"Alvin","last_name":"Bath","product":"Automotive","price":680.93,"date":"1993-06-03 05:13:43"},
+  {"id":7,"first_name":"Eduard","last_name":"Baterip","product":"Jewelery","price":295.78,"date":"2012-01-31 12:22:26"},
+  {"id":8,"first_name":"Galina","last_name":"Causey","product":"Computers","price":660.11,"date":"2011-09-03 16:57:52"},
+  {"id":9,"first_name":"Nicola","last_name":"Mepham","product":"Baby","price":372.81,"date":"1985-02-14 06:45:27"},
+  {"id":10,"first_name":"Christoffer","last_name":"Izard","product":"Electronics","price":510.8,"date":"2017-02-27 21:57:40"},
+  {"id":11,"first_name":"Iosep","last_name":"Normanvell","product":"Kids","price":670.65,"date":"1984-03-24 17:34:36"},
+  {"id":12,"first_name":"Lydia","last_name":"Bath","product":"Baby","price":740.45,"date":"2011-07-24 15:56:41"},
+  {"id":13,"first_name":"Cameron","last_name":"Stride","product":"Home","price":538.68,"date":"1982-02-24 09:36:12"},
+  {"id":14,"first_name":"Archibald","last_name":"Titherington","product":"Toys","price":636.97,"date":"1997-12-15 09:05:58"},
+  {"id":15,"first_name":"Nissie","last_name":"Loddon","product":"Sports","price":302.28,"date":"1983-06-17 05:06:18"},
+  {"id":16,"first_name":"Charlene","last_name":"Rogez","product":"Music","price":118.6,"date":"1989-03-09 09:03:57"},
+  {"id":17,"first_name":"Simonne","last_name":"Veschambes","product":"Kids","price":561.74,"date":"2002-06-30 18:05:41"},
+  {"id":18,"first_name":"Boony","last_name":"Tordoff","product":"Health","price":118.7,"date":"2001-09-28 12:40:17"},
+  {"id":19,"first_name":"Basilio","last_name":"Harmant","product":"Beauty","price":677.71,"date":"1984-07-07 04:41:37"},
+  {"id":20,"first_name":"Annamaria","last_name":"Strang","product":"Kids","price":864.37,"date":"2009-01-03 15:10:43"},
+  {"id":21,"first_name":"Dael","last_name":"Mildner","product":"Home","price":421.06,"date":"2001-03-27 21:30:06"},
+  {"id":22,"first_name":"Pauline","last_name":"Duffett","product":"Toys","price":896.52,"date":"2003-03-28 22:10:05"},
+  {"id":23,"first_name":"Adams","last_name":"Crich","product":"Beauty","price":451.12,"date":"2011-07-02 17:38:13"},
+  {"id":24,"first_name":"Merline","last_name":"Placstone","product":"Toys","price":14.81,"date":"2001-07-20 04:40:35"},
+  {"id":25,"first_name":"Mignonne","last_name":"Sachno","product":"Jewelery","price":797.21,"date":"1989-11-04 08:50:35"},
+  {"id":26,"first_name":"Obadias","last_name":"Skin","product":"Garden","price":258.33,"date":"1982-03-05 21:38:45"},
+  {"id":27,"first_name":"Tate","last_name":"Jordan","product":"Games","price":687.02,"date":"2004-05-19 22:02:16"},
+  {"id":28,"first_name":"Theo","last_name":"Rathbourne","product":"Games","price":677.01,"date":"1986-06-11 12:40:31"},
+  {"id":29,"first_name":"Hubert","last_name":"Welden","product":"Sports","price":257.18,"date":"2018-12-25 01:47:38"},
+  {"id":30,"first_name":"Ruthi","last_name":"Collecott","product":"Grocery","price":259.52,"date":"1986-09-21 16:25:46"},
+  {"id":31,"first_name":"Giacobo","last_name":"Issacof","product":"Tools","price":337.03,"date":"1989-02-16 16:44:08"},
+  {"id":32,"first_name":"Ford","last_name":"Fawckner","product":"Tools","price":330.93,"date":"1987-12-02 12:54:59"},
+  {"id":33,"first_name":"Charmian","last_name":"Ratt","product":"Games","price":685.1,"date":"2007-06-08 10:59:39"},
+  {"id":34,"first_name":"Carrissa","last_name":"Scotchford","product":"Clothing","price":868.33,"date":"1984-10-13 18:56:06"},
+  {"id":35,"first_name":"Rowney","last_name":"Eaken","product":"Shoes","price":9.24,"date":"1994-04-11 22:58:55"},
+  {"id":36,"first_name":"Chrystel","last_name":"Allgood","product":"Jewelery","price":703.13,"date":"2012-07-23 19:05:25"},
+  {"id":37,"first_name":"Cordy","last_name":"Faiers","product":"Clothing","price":218.89,"date":"2008-09-29 01:23:58"},
+  {"id":38,"first_name":"Angelika","last_name":"Gagie","product":"Home","price":489.18,"date":"2001-01-07 03:08:18"},
+  {"id":39,"first_name":"Rafael","last_name":"Janssens","product":"Clothing","price":825.21,"date":"1988-01-04 02:12:37"},
+  {"id":40,"first_name":"Orella","last_name":"Glave","product":"Baby","price":38.79,"date":"2012-02-04 10:54:46"},
+  {"id":41,"first_name":"Thurstan","last_name":"Currm","product":"Movies","price":605.23,"date":"2014-11-04 22:17:50"},
+  {"id":42,"first_name":"Vassily","last_name":"Guise","product":"Electronics","price":539.92,"date":"2014-10-15 22:54:25"},
+  {"id":43,"first_name":"Ashla","last_name":"Puig","product":"Home","price":758.18,"date":"1988-05-05 19:07:15"},
+  {"id":44,"first_name":"Ines","last_name":"Ciabatteri","product":"Toys","price":687.96,"date":"2018-07-06 08:16:35"},
+  {"id":45,"first_name":"Shawnee","last_name":"Farndell","product":"Baby","price":527.99,"date":"1992-07-22 15:30:17"},
+  {"id":46,"first_name":"Chloe","last_name":"Jurs","product":"Sports","price":712.39,"date":"2008-04-17 20:01:49"},
+  {"id":47,"first_name":"Farrell","last_name":"Bramelt","product":"Sports","price":128.29,"date":"2012-10-04 20:12:35"},
+  {"id":48,"first_name":"Morissa","last_name":"Heathfield","product":"Industrial","price":474.96,"date":"1983-10-13 01:48:39"},
+  {"id":49,"first_name":"Oby","last_name":"Sinnat","product":"Shoes","price":791.84,"date":"1997-10-13 03:35:47"},
+  {"id":50,"first_name":"Marmaduke","last_name":"Wolledge","product":"Clothing","price":430.66,"date":"1998-12-27 11:09:31"},
+  {"id":51,"first_name":"Kennedy","last_name":"Poolman","product":"Electronics","price":54.55,"date":"1992-06-18 19:55:02"},
+  {"id":52,"first_name":"Alanah","last_name":"Sidnall","product":"Toys","price":696.72,"date":"1983-08-02 23:46:32"},
+  {"id":53,"first_name":"Kris","last_name":"Veivers","product":"Sports","price":789.4,"date":"2017-02-28 21:06:07"},
+  {"id":54,"first_name":"Reuven","last_name":"Helis","product":"Home","price":264.06,"date":"2014-04-27 08:20:08"},
+  {"id":55,"first_name":"Jody","last_name":"Pounds","product":"Beauty","price":793.17,"date":"1997-02-20 07:28:33"},
+  {"id":56,"first_name":"Deni","last_name":"Lehemann","product":"Electronics","price":581.37,"date":"1997-01-02 19:58:53"},
+  {"id":57,"first_name":"Cleveland","last_name":"Dinnage","product":"Shoes","price":484.5,"date":"1983-10-04 18:22:22"},
+  {"id":58,"first_name":"Lothaire","last_name":"Derye-Barrett","product":"Kids","price":613.52,"date":"1989-01-21 12:32:31"},
+  {"id":59,"first_name":"Lorianna","last_name":"Surgen","product":"Industrial","price":260.17,"date":"2006-03-20 14:52:16"},
+  {"id":60,"first_name":"Avictor","last_name":"Batchelar","product":"Clothing","price":646.82,"date":"1980-12-31 08:13:46"},
+  {"id":61,"first_name":"Kacie","last_name":"Realph","product":"Sports","price":70.21,"date":"1990-10-16 22:27:14"},
+  {"id":62,"first_name":"Libbie","last_name":"McMeyler","product":"Health","price":739.93,"date":"2008-06-09 17:43:18"},
+  {"id":63,"first_name":"Fax","last_name":"Emanuel","product":"Toys","price":787.72,"date":"1997-03-27 05:25:34"},
+  {"id":64,"first_name":"Evaleen","last_name":"MacKinnon","product":"Beauty","price":353.94,"date":"2007-04-21 00:27:07"},
+  {"id":65,"first_name":"Faun","last_name":"Bladesmith","product":"Beauty","price":13.92,"date":"1985-03-28 16:54:43"},
+  {"id":66,"first_name":"Charita","last_name":"Phateplace","product":"Industrial","price":473.51,"date":"1999-07-14 03:39:53"},
+  {"id":67,"first_name":"Katey","last_name":"Weigh","product":"Books","price":647.1,"date":"1982-04-02 06:10:43"},
+  {"id":68,"first_name":"Adorne","last_name":"Davidi","product":"Outdoors","price":834.9,"date":"2018-06-09 00:47:35"},
+  {"id":69,"first_name":"Andrew","last_name":"Wharrier","product":"Toys","price":349.29,"date":"1999-03-21 07:35:54"},
+  {"id":70,"first_name":"Hyacinthia","last_name":"Rosenfelder","product":"Garden","price":305.96,"date":"2013-05-20 12:28:31"},
+  {"id":71,"first_name":"Waring","last_name":"Fieldstone","product":"Health","price":50.23,"date":"1992-06-30 18:20:05"},
+  {"id":72,"first_name":"Davide","last_name":"Kiellor","product":"Tools","price":125.73,"date":"2014-08-08 14:37:39"},
+  {"id":73,"first_name":"Darice","last_name":"Goulbourne","product":"Games","price":972.9,"date":"1988-03-31 18:33:49"},
+  {"id":74,"first_name":"Margareta","last_name":"Elmar","product":"Garden","price":122.3,"date":"2004-08-28 04:22:48"},
+  {"id":75,"first_name":"Meris","last_name":"Poynter","product":"Games","price":519.43,"date":"2000-01-02 21:35:22"},
+  {"id":76,"first_name":"Reinhard","last_name":"Crottagh","product":"Toys","price":790.81,"date":"1985-10-17 07:25:48"},
+  {"id":77,"first_name":"Renata","last_name":"Randlesome","product":"Automotive","price":744.56,"date":"2004-06-16 22:47:22"},
+  {"id":78,"first_name":"Ginnifer","last_name":"McLice","product":"Games","price":905.42,"date":"2002-07-26 02:38:13"},
+  {"id":79,"first_name":"Hurleigh","last_name":"Haddinton","product":"Industrial","price":915.38,"date":"1987-12-09 04:29:21"},
+  {"id":80,"first_name":"Sashenka","last_name":"Brandoni","product":"Jewelery","price":205.11,"date":"1990-11-08 04:06:29"},
+  {"id":81,"first_name":"Neddy","last_name":"Kegan","product":"Shoes","price":697.28,"date":"1999-02-13 08:42:18"},
+  {"id":82,"first_name":"Ardelle","last_name":"Guiet","product":"Baby","price":403.65,"date":"2001-05-11 00:11:27"},
+  {"id":83,"first_name":"Diannne","last_name":"Pullman","product":"Kids","price":948.88,"date":"1998-06-03 01:33:36"},
+  {"id":84,"first_name":"Eb","last_name":"Easterfield","product":"Sports","price":832.51,"date":"1991-10-18 02:00:02"},
+  {"id":85,"first_name":"Saraann","last_name":"Gornall","product":"Clothing","price":533.21,"date":"2002-01-05 04:21:42"},
+  {"id":86,"first_name":"Bertrando","last_name":"Bartolomeo","product":"Books","price":929.48,"date":"2019-03-27 06:31:14"},
+  {"id":87,"first_name":"Esra","last_name":"Hryniewicz","product":"Toys","price":229.64,"date":"1994-08-16 18:45:38"},
+  {"id":88,"first_name":"Gary","last_name":"Commuzzo","product":"Automotive","price":276.28,"date":"1994-04-20 04:04:35"},
+  {"id":89,"first_name":"Boniface","last_name":"Brandes","product":"Electronics","price":224.47,"date":"2015-01-20 01:23:41"},
+  {"id":90,"first_name":"Brett","last_name":"Gayter","product":"Tools","price":756.1,"date":"1984-10-21 21:47:50"},
+  {"id":91,"first_name":"Tabby","last_name":"Clifforth","product":"Games","price":742.86,"date":"2016-10-17 06:57:52"},
+  {"id":92,"first_name":"Berty","last_name":"Froude","product":"Kids","price":170.09,"date":"2011-03-28 13:13:15"},
+  {"id":93,"first_name":"Clare","last_name":"Du Hamel","product":"Games","price":392.73,"date":"2003-06-08 07:59:33"},
+  {"id":94,"first_name":"Giavani","last_name":"Eighteen","product":"Books","price":784.81,"date":"1992-08-28 06:33:25"},
+  {"id":95,"first_name":"Lurlene","last_name":"Kobpal","product":"Jewelery","price":233.49,"date":"2013-11-07 23:54:37"},
+  {"id":96,"first_name":"Hali","last_name":"MacKaile","product":"Baby","price":952.34,"date":"1981-01-10 16:44:32"},
+  {"id":97,"first_name":"Angy","last_name":"Valentine","product":"Games","price":759.01,"date":"2000-03-17 16:24:51"},
+  {"id":98,"first_name":"Fianna","last_name":"Calwell","product":"Games","price":18.47,"date":"2000-02-06 03:52:54"},
+  {"id":99,"first_name":"Tori","last_name":"Cargen","product":"Electronics","price":502.76,"date":"2018-11-21 07:13:07"},
+  {"id":100,"first_name":"Parry","last_name":"Kopmann","product":"Automotive","price":928.1,"date":"2011-06-09 10:17:36"}
+]
+
+
+
+    // ********* Array.prototype.filter()
+    // 1. Filter the list of people for those who were bought during November after 2000
+    const filtered = peoples.filter( people =>{
+      const [peopleYear, peopleMonth, peopleDay] = people.date.split('-')
+      if ((peopleMonth == 5) && (peopleYear >= 2001))
+      return true
+    })
+    console.warn('filtered - november and after 2001')
+    console.table(filtered)
+
+    
+    // ********* Array.prototype.map()
+    // 2. Give us an array of the peoples' first and last names
+    const mapped = peoples.map( people => {
+      return `${people.first_name} ${people.last_name}`
+    })
+    console.warn('mapped - first and last name')
+    console.table(mapped)
+
+
+    // ********* Array.prototype.sort()
+    // 3. Sort the people by product price
+    const peopleSort = [...peoples] //make a copy of the array to avoid mutation
+    const sorted = peopleSort.sort((a,b) => b - a)
+    console.warn('sorted by product price highest')
+    console.table(sorted)
+    // console.warn('peoples is still sorted')
+    // console.table(peoples)
+
+
+    // ********* Array.prototype.reduce()
+    // 4. How much total purchased?
+    const reducedSum = peoples.reduce((acc, people) =>{
+      return acc += people.price
+    },0)
+    console.warn('reduced to sum')
+    console.log(reducedSum)
+
+    const reducedAverage = peoples.reduce((acc, people, index, array) =>{
+      acc += people.price
+      if(index === array.length - 1 ){
+        const avg = acc / array.length
+        return avg.toFixed(2)
+      }
+      return acc
+    },0)
+    console.warn('reduced to average')
+    console.log(reducedAverage)
+
+
+    // ********* 5. Sort the peoples by date
+    const peopleSort2 = [...peoples] //make a copy of the array to avoid mutation
+    peopleSort2.sort((a,b) =>{
+      return a.date < b.date ? 1 : -1
+    })
+    console.warn('sort by date')
+    console.table(peopleSort2)
+    // console.warn('peoples is still sorted')
+    // console.table(peoples)
+
+
+    // ********* 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+
+    // ********* 7. sort Exercise
+    // Sort the people alphabetically by last name
+    const peopleSort3 = [...peoples] //make a copy of the array to avoid mutation
+    peopleSort3.sort((a,b) =>{
+      return a.last_name < b.last_name ? -1 : 1
+    })
+    const mapSort = peopleSort3.map(people => {
+      return `${people.last_name}, ${people.first_name}`
+    })
+    console.table(mapSort)
+
+
+    // ********* 8. Reduce Exercise
+    // Sum up the instances of each of product
+
+    const reduceProducts = peoples.reduce((acc, people) => {
+      acc[people.product] = (acc[people.product] || 0) + 1
+      return acc
+    }, {})
+    console.table(reduceProducts)
+
+  </script>
+</body>
+</html>
